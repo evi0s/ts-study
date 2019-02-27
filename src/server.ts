@@ -1,14 +1,25 @@
 import * as Koa from 'koa';
-import * as Router from 'koa-router';
+import * as json from 'koa-json';
+import * as logger from 'koa-logger';
+
+const onerror = require('koa-onerror');
+const bodyparser = require('koa-bodyparser')();
+
+import { indexRouter } from './routes/index'
 
 const app = new Koa();
-const router = new Router();
 
-router.get('/*', async (ctx) => {
-    ctx.body = 'Hello World!';
+onerror(app);
+
+app.use(bodyparser);
+app.use(json());
+app.use(logger());
+
+app.use(indexRouter.routes());
+
+app.on('error', (err, ctx) => {
+    console.error('server error', err, ctx)
 });
-
-app.use(router.routes());
 
 app.listen(3000);
 

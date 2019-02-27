@@ -23,8 +23,15 @@
   "homepage": "https://github.com/evi0s/ts-study#readme",
   "dependencies": {
     "@types/koa": "^2.0.48",
+    "@types/koa-bodyparser": "^4.2.2",
+    "@types/koa-json": "^2.0.18",
+    "@types/koa-logger": "^3.1.1",
     "@types/koa-router": "^7.0.40",
     "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-json": "^2.0.2",
+    "koa-logger": "^3.2.0",
+    "koa-onerror": "^4.1.0",
     "koa-router": "^7.4.0"
   }
 }
