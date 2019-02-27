@@ -1,0 +1,30 @@
+{
+  "name": "lrblog",
+  "version": "1.0.0",
+  "description": "TypeScript &amp; Koa Study-Based Blog Project",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node dist/server.js",
+    "watch-server": "nodemon --watch 'src/**/*' -e ts,tsx --exec 'ts-node' ./src/server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evi0s/ts-study.git"
+  },
+  "keywords": [
+    "koa"
+  ],
+  "author": "evi0s",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/evi0s/ts-study/issues"
+  },
+  "homepage": "https://github.com/evi0s/ts-study#readme",
+  "dependencies": {
+    "@types/koa": "^2.0.48",
+    "@types/koa-router": "^7.0.40",
+    "koa": "^2.7.0",
+    "koa-router": "^7.4.0"
+  }
+}
