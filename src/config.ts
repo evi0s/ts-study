@@ -6,8 +6,9 @@ let env = process.env;
 
 let databasehost = env.DATABASE_HOST || 'localhost';
 let databaseport = env.DATABASE_PORT ||  27017;
-let databaseuser = env.DATABASE_USER || 'root';
-let databasepass = env.DATABASE_PASS || 'root';
+let databaseuser = env.DATABASE_USER || '';
+let databasepass = env.DATABASE_PASS || '';
+let databasename = env.DATABASE_NAME || 'test';
 let redishost    = env.REDIS_HOST    || 'localhost';
 let redisport    = env.REDIS_PORT    ||  6379;
 let sessmaxage   = env.SESS_MAXAGE   ||  86400000;
@@ -24,6 +25,7 @@ export {
     databaseport,
     databaseuser,
     databasepass,
+    databasename,
     redishost,
     redisport,
     sessmaxage,

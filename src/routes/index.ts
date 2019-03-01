@@ -1,8 +1,11 @@
 import * as Router from 'koa-router';
-import { passport } from '../controller/passport'
-
+import { Passport } from '../controller/passport'
+import { debug } from '../tools/debug';
+import { successResponse } from "../model/successResponse";
+import { errorResponse } from "../model/errorResponse";
 
 const indexRouter = new Router();
+const passport = new Passport();
 
 indexRouter.get('/', async (ctx) => {
     ctx.body = 'Hello World!';
@@ -18,7 +21,18 @@ indexRouter.post('/login', async (ctx) => {
     let password = ctx.request.body.password || '';
 
     console.log(ctx.request.body);
-    ctx.body = ctx.request.body;
+    let result;
+    try {
+        result = await passport.login(username, password);
+    } catch (err) {
+        throw err;
+    }
+    debug(result);
+    let res = new successResponse(
+        200,
+        'OK',
+        result).toString();
+    ctx.body = res;
 });
 
 indexRouter.get('/session', async (ctx) => {
