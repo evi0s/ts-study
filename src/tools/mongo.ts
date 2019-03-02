@@ -16,7 +16,11 @@ class Mongo {
     private Connection:any = null;
 
     constructor () {
-        this.Connection = Mongoose.connect(URL, {useNewUrlParser: true}).catch((err) => {
+        Mongoose.connect(URL, {useNewUrlParser: true})
+            .then((connection) => {
+                this.Connection = connection;
+            })
+            .catch((err) => {
             debug(`Error in connecting to database: ${err.message}`);
             throw err;
         });

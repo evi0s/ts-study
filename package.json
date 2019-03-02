@@ -41,7 +41,8 @@
     "koa-session": "^5.10.1",
     "koa-session-redis": "^1.1.0",
     "mongoose": "^5.4.16",
-    "typescript": "^3.3.3333"
+    "typescript": "^3.3.3333",
+    "xss": "^1.0.3"
   },
   "devDependencies": {
     "@types/chai": "^4.1.7",
